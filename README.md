@@ -4,11 +4,19 @@
 
 **A premium-looking, responsive multi-page website built with HTML, CSS & vanilla JavaScript.**
 
+**Live site**: `https://jocular-madeleine-5f5699.netlify.app/`
+
 <p>
   <img alt="HTML5" src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" />
   <img alt="CSS3" src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" />
   <img alt="JavaScript" src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=000" />
   <img alt="Netlify ready" src="https://img.shields.io/badge/Deploy-Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white" />
+</p>
+
+<p>
+  <a href="https://jocular-madeleine-5f5699.netlify.app/" target="_blank" rel="noreferrer">
+    <img alt="Live Demo" src="https://img.shields.io/badge/Live%20Demo-Open%20Site-111827?style=for-the-badge&logo=googlechrome&logoColor=white" />
+  </a>
 </p>
 
 </div>
