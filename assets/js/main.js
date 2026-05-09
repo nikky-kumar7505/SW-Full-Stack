@@ -89,6 +89,42 @@
     window.matchMedia('(hover: hover)').matches &&
     !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  // Cursor "reflection" / glow (desktop only)
+  const canCursorGlow =
+    window.matchMedia('(hover: hover)').matches &&
+    window.matchMedia('(pointer: fine)').matches &&
+    !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (canCursorGlow) {
+    const root = document.documentElement;
+    let rafId = 0;
+    let latest = null;
+
+    const apply = () => {
+      rafId = 0;
+      if (!latest) return;
+      const x = (latest.clientX / window.innerWidth) * 100;
+      const y = (latest.clientY / window.innerHeight) * 100;
+      root.style.setProperty('--cursor-x', `${x.toFixed(2)}%`);
+      root.style.setProperty('--cursor-y', `${y.toFixed(2)}%`);
+      root.style.setProperty('--cursor-glow-opacity', '1');
+    };
+
+    window.addEventListener(
+      'pointermove',
+      (e) => {
+        latest = e;
+        if (!rafId) rafId = requestAnimationFrame(apply);
+      },
+      { passive: true }
+    );
+
+    window.addEventListener('pointerleave', () => {
+      latest = null;
+      root.style.setProperty('--cursor-glow-opacity', '0');
+    });
+  }
+
   if (canTilt) {
     const tiltTargets = document.querySelectorAll('.hero-card, .card, .banner-card, .stat, .contact-item');
     const maxRotate = 8;

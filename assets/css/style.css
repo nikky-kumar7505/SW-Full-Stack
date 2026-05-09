@@ -47,6 +47,35 @@ body::before{
     radial-gradient(650px 420px at 110% 20%, rgba(45,212,191,.08), transparent 60%);
   z-index: -1;
 }
+body::after{
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: var(--cursor-glow-opacity, 0);
+  transition: opacity .25s ease;
+  background:
+    radial-gradient(
+      420px 260px at var(--cursor-x, 50%) var(--cursor-y, 50%),
+      rgba(91,140,255,.18),
+      transparent 62%
+    ),
+    radial-gradient(
+      340px 220px at var(--cursor-x, 50%) var(--cursor-y, 50%),
+      rgba(45,212,191,.14),
+      transparent 58%
+    );
+  mix-blend-mode: screen;
+}
+
+/* Ensure content stays above cursor glow layer */
+.site-header,
+main,
+.site-footer{
+  position: relative;
+  z-index: 1;
+}
 img{ max-width: 100%; height: auto; display: block; }
 a{ color: inherit; text-decoration: none; }
 
