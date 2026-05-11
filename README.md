@@ -15,21 +15,15 @@ The deployed site is the **same frontend** (HTML/CSS/JS), wired to the **live ba
   </a>
 </p>
 
-### Admin panel
+### To access admin panel
 
-1. Open the **live site** above.  
-2. Click **Login** in the navbar.  
-3. Sign in using **`ADMIN_EMAIL`** and **`ADMIN_PASSWORD`** from **`Backend/.env`** (usually **lines 5–7**). These must match what you used when you ran `npm run seed` in `Backend/`.  
-4. After a successful admin login you are sent to the admin area; you can also open **`admin.html`** from the navbar when logged in as admin.
-
-Default values (same as `Backend/.env.example`):
+1. Click **Login** in the navbar.  
+2. Use these credentials:
 
 | Field | Value |
 |--------|--------|
 | **Email** | `admin@swtech.com` |
 | **Password** | `Admin@12345` |
-
-> If login fails, confirm MongoDB is connected on Render, re-run `npm run seed` locally (or your seed process), and that `ADMIN_EMAIL` / `ADMIN_PASSWORD` in `Backend/.env` match the account you expect.
 
 </div>
 
