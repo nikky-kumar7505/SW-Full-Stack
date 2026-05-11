@@ -1,122 +1,66 @@
 <div align="center">
 
-# SW Technologies — Modern Website
+# SW Technologies — Full Stack (Frontend + Backend)
 
-**A premium-looking, responsive multi-page website built with HTML, CSS & vanilla JavaScript.**
+**Live app**: [https://jocular-madeleine-5f5699.netlify.app/](https://jocular-madeleine-5f5699.netlify.app/)
 
-**Live site**: `https://jocular-madeleine-5f5699.netlify.app/`
-
-<p>
-  <img alt="HTML5" src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" />
-  <img alt="CSS3" src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" />
-  <img alt="JavaScript" src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=000" />
-  <img alt="Netlify ready" src="https://img.shields.io/badge/Deploy-Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white" />
-</p>
+The deployed site is the **same frontend** (HTML/CSS/JS), wired to the **live backend API** (contact, newsletter, quote modal, login/register, profile, admin). Update the API base URL in `Frontend/assets/js/config.js` if you point the UI at a different server.
 
 <p>
   <a href="https://jocular-madeleine-5f5699.netlify.app/" target="_blank" rel="noreferrer">
-    <img alt="Live Demo" src="https://img.shields.io/badge/Live%20Demo-Open%20Site-111827?style=for-the-badge&logo=googlechrome&logoColor=white" />
+    <img alt="Open live app" src="https://img.shields.io/badge/Live%20App-Open%20Site-111827?style=for-the-badge&logo=googlechrome&logoColor=white" />
+  </a>
+  <a href="https://sw-technologies-backend.onrender.com/api/health" target="_blank" rel="noreferrer">
+    <img alt="API health" src="https://img.shields.io/badge/API-Health%20check-46C93A?style=for-the-badge&logo=render&logoColor=white" />
   </a>
 </p>
+
+### Demo admin (seed / `.env`)
+
+Use these to sign in on **Login** and open **Admin** (change them in production):
+
+| Field | Value |
+|--------|--------|
+| **Email** | `admin@swtech.com` |
+| **Password** | `Admin@12345` |
+
+> Set the same values in `Backend/.env` as `ADMIN_EMAIL` / `ADMIN_PASSWORD`, then run `npm run seed` in `Backend/` so the admin user exists in MongoDB.
 
 </div>
 
 ---
 
-## ✨ Highlights
+## Repository layout
 
-- ⚡ **Fast & lightweight** static site (no build step)
-- 📱 **Mobile-first** responsive layout
-- 🎛️ **Vanilla JS** interactions (navbar + counters + contact form logic)
-- 🎨 **Modern UI** styling in a single stylesheet
+- **`Frontend/`** — Round 1 static site (HTML/CSS/JS) + Round 2 API integration
+- **`Backend/`** — Express + MongoDB + JWT + admin APIs
 
-## 🖼️ Preview
+## Quick start (local, full-stack)
 
-> Tip: Add screenshots here to make it look even more professional.
->
-> - Save images in `assets/img/` (example: `assets/img/preview-home.png`)
-> - Then uncomment the image lines below
-
-<!--
-### Home
-![Home preview](assets/img/preview-home.png)
-
-### About
-![About preview](assets/img/preview-about.png)
--->
-
-## 🧭 Pages
-
-- `index.html` — Home
-- `about.html` — About
-- `services.html` — Services
-- `contact.html` — Contact
-
-## 🗂️ Project structure
-
-```text
-assignment/
-  index.html
-  about.html
-  services.html
-  contact.html
-  assets/
-    css/
-      style.css
-    js/
-      main.js
-      contact.js
-    img/
-      ...
-```
-
-## 🚀 Run locally
-
-Because this is a static site, you can open `index.html` directly in a browser.
-
-For the best experience (and to avoid any browser restrictions), run a small local server:
-
-### Option A: VS Code / Cursor Live Server 🧩
-
-- Install the **Live Server** extension
-- Right-click `index.html` → **Open with Live Server**
-
-### Option B: Python (built-in) 🐍
-
-From the `assignment/` folder:
+### 1) Configure backend env
 
 ```bash
-python3 -m http.server 5173
+cp Backend/.env.example Backend/.env
 ```
 
-Then open `http://localhost:5173` in your browser.
+Update `Backend/.env`:
 
-## 🌍 Deploy to Netlify
+- `MONGODB_URI` — your MongoDB connection string  
+- `JWT_SECRET` — long random string  
+- `ADMIN_EMAIL` / `ADMIN_PASSWORD` — optional override before seed  
 
-This project deploys as a **static site** (no build step).
+### 2) Install, seed, run
 
-### Option 1: Drag & drop (fastest) 🟢
+```bash
+cd Backend
+npm install
+npm run seed
+npm run dev
+```
 
-- In Netlify: **Add new site** → **Deploy manually**
-- Drag and drop the **entire `assignment/` folder** (the folder that contains `index.html`)
-- Netlify will generate a live URL
+Open: `http://localhost:5001` (or your `PORT`).
 
-### Option 2: GitHub (recommended) 🔗
+## Docs
 
-- Push this project to GitHub
-- In Netlify: **Add new site** → **Import an existing project**
-- Configure:
-  - **Build command**: *(leave empty)*
-  - **Publish directory**: `.`
-- Deploy
-
-## ✅ Notes
-
-- Keep asset paths relative (e.g. `assets/css/style.css`, `assets/js/main.js`) so they work locally and on Netlify.
-
----
-
-## 📄 License
-
-This project is for educational/assignment use. Add a license if you plan to publish it publicly.
-
+- **Frontend**: `Frontend/README.md`  
+- **Backend** (live API docs): `Backend/README.md` — API base: [https://sw-technologies-backend.onrender.com](https://sw-technologies-backend.onrender.com)
