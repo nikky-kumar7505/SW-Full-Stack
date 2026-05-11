@@ -2,7 +2,7 @@
 
 # SW Technologies — Full Stack (Frontend + Backend)
 
-**Live app**: [https://jocular-madeleine-5f5699.netlify.app/](https://jocular-madeleine-5f5699.netlify.app/)
+**Live app**: [https://nikky-kumar7505.github.io/SW-Technologies/](https://nikky-kumar7505.github.io/SW-Technologies/)
 
 The deployed site is the **same frontend** (HTML/CSS/JS), wired to the **live backend API** (contact, newsletter, quote modal, login/register, profile, admin). Update the API base URL in `Frontend/assets/js/config.js` if you point the UI at a different server.
 
